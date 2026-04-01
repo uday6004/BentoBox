@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinanceFlow | Expense Tracker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans">
+    <div class="max-w-4xl mx-auto p-6">
+        <header class="mb-8">
+            <h1 class="text-3xl font-bold text-indigo-600">FinanceFlow</h1>
+            <p class="text-slate-500">Track your spending with precision.</p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                <h3 class="text-sm font-medium text-slate-500 uppercase">Total Balance</h3>
+                <p id="balance" class="text-3xl font-bold mt-2">$0.00</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                <h3 class="text-sm font-medium text-green-500 uppercase">Income</h3>
+                <p id="income" class="text-2xl font-semibold mt-2 text-green-600">+$0.00</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                <h3 class="text-sm font-medium text-red-500 uppercase">Expense</h3>
+                <p id="expense" class="text-2xl font-semibold mt-2 text-red-600">-$0.00</p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <section class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                <h2 class="text-xl font-bold mb-4">Add Transaction</h2>
+                <form id="form" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Description</label>
+                        <input type="text" id="text" placeholder="Enter text..." class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Amount (negative = expense)</label>
+                        <input type="number" id="amount" placeholder="-100" class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none">
+                    </div>
+                    <button class="w-full bg-indigo-600 text-white py-2 rounded-lg font-medium hover:bg-indigo-700 transition">Add Transaction</button>
+                </form>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold mb-4">History</h2>
+                <ul id="list" class="space-y-3">
+                    </ul>
+            </section>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
